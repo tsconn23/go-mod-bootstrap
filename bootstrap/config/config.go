@@ -639,6 +639,7 @@ func CreateProviderClient(
 func (cp *Processor) loadConfigYamlFromFile(yamlFile string) (map[string]any, error) {
 	cp.lc.Infof("Loading configuration file from %s", yamlFile)
 	contents, err := os.ReadFile(yamlFile)
+	fmt.Printf("CONFIG CONTENTS: %s", string(contents))
 	if err != nil {
 		return nil, fmt.Errorf("failed to read configuration file %s: %s", yamlFile, err.Error())
 	}
